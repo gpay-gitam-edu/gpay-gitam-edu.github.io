@@ -1,0 +1,168 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link href="css/bootstrap.min.css" rel="stylesheet" /><link href="css/fonts/remixicon.css" rel="stylesheet" /><link href="css/style.css" rel="stylesheet" /><title>
+	G-Pay
+</title><link rel="shortcut icon" href="https://www.gitam.edu/assets/images/favicon.ico" type="image/x-icon" /></head>
+     <script>
+         // disable right click
+         document.addEventListener('contextmenu', event => event.preventDefault());
+
+         document.onkeydown = function (e) {
+
+             // disable F12 key
+             if (e.keyCode == 123) {
+                 return false;
+             }
+
+             // disable U key
+             if (e.ctrlKey && e.keyCode == 85) {
+                 return false;
+             }
+         }
+     </script>
+<body>
+
+
+    <div class="mainContainer">
+  <div class="leftSideBar">
+            <div class="logoText">
+                <!-- <h4>Menu</h4> -->
+
+            
+                <img src="images/logo-white.png" />
+
+            </div>
+            <!-- <hr> -->
+            <ul class="menuItems">
+                <li class="listItems">
+                    <a href="profile.html">
+                        <i class="ri-user-3-line"></i>
+                        <p>Profile</p>
+                    </a>
+                </li>
+                <li class="listItems">
+                    <a href="index.html">
+                        <i class="ri-secure-payment-fill"></i>
+                        <p>Tuition & Misc. fee</p>
+                    </a>
+                </li>
+                  <li class="listItems ">
+                    <a href="hostelfee.html">
+                       <i class="ri-hotel-line"></i>
+                        <p>Hostel fee</p>
+                    </a>
+                </li>
+               
+                <li class="listItems active">
+                  <a href="paymenthistory.html">
+                        <i class="ri-history-fill"></i>
+                        <p>Payment history</p>
+                    </a>
+                </li>
+                
+            </ul>
+
+        </div>
+        <div class="rightSec">
+           <div class="topHeader">
+                <div>
+                    <!-- <h5 class="headerTitle">G-pay <small>Unified payment portal</small></h5> -->
+                     <h6 class="profile_name mr-5"><span class="mobile_hidden">Welcome,</span> &nbsp; 
+                         <span id="lblStudentName">VELICHALA ABHISHEK VARDHAN</span>  
+                         <span id="lblregdno">121910306006</span>
+                     </h6>
+                </div>
+                <div class="d-flex">
+                   
+                    <div class="logout">
+                        <a href="Login.aspx">
+                            <h6><i class="ri-login-circle-line"></i> Logout</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" boxContainer payementHistory">
+               
+                <div class="boxInner">
+                    
+                    <ul class="nav nav-tabs">
+                        <li><a class="active" data-toggle="tab" href="#home">Tuition  fee</a></li>
+                        <li> <a data-toggle="tab" href="#menu1">Hostel fee</a></li>
+                      
+
+
+                        
+                    </ul>
+                      
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade  active show">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="tblmiscData"  >
+                                    <thead class="thead-light">
+                                        <tr>
+                                          
+                                            
+                                             <th >Transaction date </th> 
+                                            <th > Transaction ID </th>
+                                            <th >Description</th>
+                                            <th >Payment mode</th>                                           
+                                            <th >Total fee</th>
+                                            <th >View receipt</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                      
+                                       <tr><td>12/14/2022 3:18:26 PM</td><td>pay_KrkL9mH8MnNo9a</td><td>Tuition fee</td><td>ONLINEPAYMENT</td><td>285366</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=pay_KrkL9mH8MnNo9a&FEECATEGORY=TUITIONFEE> View Receipt </a></td></tr><tr><td>7/11/2022 10:41:21 AM</td><td>pay_JrwHXsPorjkBtF</td><td>Tuition fee</td><td>ONLINEPAYMENT</td><td>10210</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=pay_JrwHXsPorjkBtF&FEECATEGORY=TUITIONFEE> View Receipt </a></td></tr><tr><td>1/31/2022 5:02:13 PM</td><td>WHMP0875925590</td><td>VSP-Placement fee-109-CRT + IT Product due-9500</td><td>ONLINEPAYMENT</td><td>9500</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=WHMP0875925590&FEECATEGORY=TUITIONFEE> View Receipt </a></td></tr><tr><td>1/26/2022 8:36:04 PM</td><td>WHD40867506574</td><td>VSP-Placement fee-105-Only CRT-7000</td><td>ONLINEPAYMENT</td><td>7000</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=WHD40867506574&FEECATEGORY=TUITIONFEE> View Receipt </a></td></tr><tr><td>1/6/2022 11:39:56 AM</td><td>WHD40669000841</td><td>9-FINES</td><td>ONLINEPAYMENT</td><td>6000</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=WHD40669000841&FEECATEGORY=TUITIONFEE> View Receipt </a></td></tr><tr><td>1/5/2022 12:00:00 AM</td><td>DCGBH22005172640</td><td>Tuition fee</td><td>NEFT-RTGS</td><td>204200</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=DCGBH22005172640&FEECATEGORY=TUITIONFEE> View Receipt </a></td></tr><tr><td>4/8/2021 9:31:39 AM</td><td>VHD49890377046</td><td>Tuition fee</td><td>ONLINEPAYMENT</td><td>68100</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=VHD49890377046&FEECATEGORY=TUITIONFEE> View Receipt </a></td></tr><tr><td>10/5/2020 6:08:06 PM</td><td>SHMP9295423289</td><td>Tuition fee</td><td>ONLINEPAYMENT</td><td>136100</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=SHMP9295423289&FEECATEGORY=TUITIONFEE> View Receipt </a></td></tr>  
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="menu1" class="tab-pane fade" >
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="tblHostel">
+                                    <thead class="thead-light">
+                                        <tr>
+                                          
+                                            <th>Transaction ID </th>
+                                             <th>Transaction date </th>                                         
+                                            <th>Description</th>
+                                            <th>Payment mode</th>                                           
+                                            <th>Total amount</th>
+                                            <th>View receipt</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>  <tr><td>YHD41698308021</td><td>1/27/2023 11:58:13 AM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>20007</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=YHD41698308021&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>pay_K2dCLHkqD26V8S</td><td>8/7/2022 11:07:21 AM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>67500</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=pay_K2dCLHkqD26V8S&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>WHD40972831823</td><td>3/11/2022 10:01:30 PM</td><td>5.Hostel charges</td><td>ONLINEPAYMENT</td><td>7700</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=WHD40972831823&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>WHD40425623784</td><td>11/21/2021 1:13:58 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>2822</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=WHD40425623784&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>WHD40390208949</td><td>11/4/2021 9:25:49 AM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>677</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=WHD40390208949&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>VHMP9787300828</td><td>2/27/2021 6:30:44 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>7500</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=VHMP9787300828&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>SIC49068097671</td><td>8/3/2020 4:09:24 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>8786</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=SIC49068097671&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>1051081711</td><td>3/11/2020 8:40:21 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>4458</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=1051081711&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>1026010918</td><td>2/15/2020 8:10:23 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>4694</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=1026010918&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>1005086138</td><td>1/22/2020 8:15:02 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>4432</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=1005086138&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>975550811</td><td>12/19/2019 8:38:56 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>4400</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=975550811&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>945982064</td><td>11/13/2019 5:45:50 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>4482</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=945982064&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>919801253</td><td>10/10/2019 6:57:25 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>4830</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=919801253&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>901521076</td><td>9/18/2019 8:29:57 AM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>4300</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=901521076&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>878268893</td><td>8/18/2019 1:53:18 PM</td><td>1.Hostel Mess Bill</td><td>ONLINEPAYMENT</td><td>6834</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=878268893&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>MU0015698798</td><td>6/19/2019 4:26:37 PM</td><td>4.Caution Deposit</td><td>INDIANBANKCHALLAN</td><td>1100</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=MU0015698798&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr><tr><td>MU0015698794</td><td>6/19/2019 4:25:45 PM</td><td>3.Management Deposit</td><td>INDIANBANKCHALLAN</td><td>49000</td><td><a href=Receipts2.aspx?REGDNO=121910306006&TXNID=MU0015698794&FEECATEGORY=HOSTELFEE> View Receipt </a></td></tr>  
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                         
+                        
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+    </div>
+    
+
+   <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+</body>
+
+</html>

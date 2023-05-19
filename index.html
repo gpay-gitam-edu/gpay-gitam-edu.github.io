@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://gpay.gitam.edu/GPayHome -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	G-Pay
+</title><link rel="shortcut icon" href="https://www.gitam.edu/assets/images/favicon.ico" type="images/x-icon"><link href="./css/bootstrap.min.css" rel="stylesheet"><link href="./css/jquery-ui.min.css" rel="stylesheet"><link href="./css/fonts/remixicon.css" rel="stylesheet"><link href="./css/style.css" rel="stylesheet">
+    <style>
+        .tution label{
+            margin-bottom:0px;
+            margin-left:7px;
+        }
+         .tution span{
+            margin-right: 25px;
+        }
+        .payment_mode h4 {
+  font-size: 18px;
+  margin-bottom: 0px;
+  color: #b1040e;
+}
+         .full_border{
+             border:1px solid #f4f4f4;
+             padding:10px;
+         }
+        .payment_mode hr {
+             margin-top: 8px;
+         }
+        .common_check input{
+            margin-left:-25px;
+        }
+        .error{
+            color:red;
+            font-size:16px;
+        }
+        #dd_payment{
+            display:none;
+        }
+        </style>
+<script>
+         // disable right click
+         document.addEventListener('contextmenu', event => event.preventDefault());
+
+         document.onkeydown = function (e) {
+
+             // disable F12 key
+             if (e.keyCode == 123) {
+                 return false;
+             }
+
+             // disable U key
+             if (e.ctrlKey && e.keyCode == 85) {
+                 return false;
+             }
+         }
+     </script></head>
+     
+<body>
+    <form method="post" action="index.html" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./G-Pay1_files/WebResource.axd" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA485798">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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">
+</div>
+        <div class="mainContainer">
+        <div class="leftSideBar">
+            <div class="logoText">
+                 
+                <img src="./images/logo-white.png">
+
+            </div>
+            <!-- <hr> -->
+            <ul class="menuItems">
+                <li class="listItems">
+                    <a href="profile.html">
+                        <i class="ri-user-3-line"></i>
+                        <p>Profile</p>
+                    </a>
+                </li>
+                <li class="listItems active">
+                    <a href="index.html">
+                        <i class="ri-secure-payment-fill"></i>
+                        <p>Tuition &amp; Misc. fee</p>
+                    </a>
+                </li>
+                  <li class="listItems ">
+                    <a href="hostelfee.html">
+                       <i class="ri-hotel-line"></i>
+                        <p>Hostel fee</p>
+                    </a>
+                </li>
+               
+                <li class="listItems ">
+                  <a href="paymenthistory.html">
+                        <i class="ri-history-fill"></i>
+                        <p>Payment history</p>
+                    </a>
+                </li>
+                
+            </ul>
+
+        </div>
+        <div class="rightSec">
+            <div class="topHeader">
+                <div>
+                    <!-- <h5 class="headerTitle">G-pay <small>Unified payment portal</small></h5> -->
+                     <h6 class="profile_name mr-5"><span class="mobile_hidden">Welcome,</span> &nbsp; 
+                         <span id="lblStudentName">VELICHALA ABHISHEK VARDHAN</span>  
+                         <span id="lblregdno">121910306006</span>  
+
+                     </h6>
+                </div>
+                <div class="d-flex">
+                   
+                    <div class="logout">
+                        <a href="https://gpay.gitam.edu/login.aspx">
+                            <h6><i class="ri-login-circle-line"></i> Logout</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+     <div class="boxContainer paymentContainer">
+                
+                <div class="boxInner">
+                    <div class="tutuionFee">
+                        <h4>Tuition fee</h4>
+                        <hr>
+
+
+                         <div class="row">
+                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 common_check">
+                                <div class="custom-control custom-checkbox">
+                                    <input id="chktuitionfee" type="radio" name="GVR" value="chktuitionfee" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;chktuitionfee\&#39;,\&#39;\&#39;)&#39;, 0)"> 
+                                </div>
+                            </div>
+
+
+                            <div class="col-8 col-sm-7 col-md-8 col-lg-7  col-xl-5 tution">
+                                <div class="form-group">
+
+                                   <input name="ctl07" type="text" value="Annual fee" readonly="readonly" style="width:350px;" fdprocessedid="9eerek">
+                                    <input type="submit" name="Button2" value="Pay in EMI" id="Button2" class="btn btn-primary" fdprocessedid="eizgvl">
+
+
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2 tution ml1_4" id="bus_fee1">
+                                <div class="form-group">
+                                    <input name="lbltuitionfee" type="text" value="0" readonly="readonly" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;lbltuitionfee\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="lbltuitionfee" class="form-control" fdprocessedid="gdw62">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 common_check">
+                                <div class="custom-control custom-checkbox">
+                                    <input id="rbosemesterfee" type="radio" name="GVR" value="rbosemesterfee" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;rbosemesterfee\&#39;,\&#39;\&#39;)&#39;, 0)"> 
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-7 col-md-8 col-lg-7  col-xl-5 tution">
+                                <div class="form-group">
+                                    <input name="ctl08" type="text" value="Semester fee" readonly="readonly" class="form-control" fdprocessedid="ys03c8">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2 tution ml1_4">
+                                <div class="form-group">
+                                    <input name="txtsemesterfee" type="text" value="0" readonly="readonly" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;txtsemesterfee\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="txtsemesterfee" class="form-control" fdprocessedid="ua8a1o">
+                                </div>
+                            </div>
+                        </div>
+
+
+                         
+                       
+
+
+                        <div class="row">
+                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 common_check">
+                                <div class="custom-control custom-checkbox">
+                                    <input id="chkarrears" type="radio" name="GVR" value="chkarrears" checked="checked">
+                                   
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-7 col-md-8 col-lg-7  col-xl-5 tution">
+                                <div class="form-group">
+                                  <input name="ctl09" type="text" value="Arrears" readonly="readonly" class="form-control" fdprocessedid="4h43pf">
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2 tution ml1_4">
+                                <div class="form-group">
+                                   <input name="lblarrears" type="text" value="0" readonly="readonly" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;lblarrears\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="lblarrears" class="form-control" fdprocessedid="6zslwl">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                       <h4>Miscellaneous fee </h4>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 common_check">
+                                <div class="custom-control custom-checkbox">
+                                    <input id="misc" type="radio" name="GVR" value="misc" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;misc\&#39;,\&#39;\&#39;)&#39;, 0)">
+                                </div>
+                            </div>
+
+                            <div class="col-8 col-sm-7 col-md-8 col-lg-7  col-xl-5 tution">
+                                <div class="form-group">
+                                   <select name="cbomiscfeetypes" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;cbomiscfeetypes\&#39;,\&#39;\&#39;)&#39;, 0)" id="cbomiscfeetypes" class="form-control" fdprocessedid="ebh59c">
+	<option selected="selected" value="Select Miscellaneous fee">Select Miscellaneous fee</option>
+	<option value="MISC-Advanced English Certificate Course">MISC-Advanced English Certificate Course</option>
+	<option value="MISC-Auditorium Rental Charges">MISC-Auditorium Rental Charges</option>
+	<option value="MISC-Auxiliary Fee">MISC-Auxiliary Fee</option>
+	<option value="MISC-Badminton Fee">MISC-Badminton Fee</option>
+	<option value="MISC-Basic English Certificate Course">MISC-Basic English Certificate Course</option>
+	<option value="MISC-British English Certificate Course">MISC-British English Certificate Course</option>
+	<option value="MISC-Cerificate Course In Autocad&amp;Catia">MISC-Cerificate Course In Autocad&amp;Catia</option>
+	<option value="MISC-Certificate Course In Autocad">MISC-Certificate Course In Autocad</option>
+	<option value="MISC-Certificate Course In Catia">MISC-Certificate Course In Catia</option>
+	<option value="MISC-Certificate Course In Digital Marketing">MISC-Certificate Course In Digital Marketing</option>
+	<option value="MISC-Certificate Course In Psychometrics">MISC-Certificate Course In Psychometrics</option>
+	<option value="MISC-Civil Services Preparatory Programme">MISC-Civil Services Preparatory Programme</option>
+	<option value="MISC-CMU">MISC-CMU</option>
+	<option value="MISC-Educational Support Services">MISC-Educational Support Services</option>
+	<option value="MISC-English Certificate Course">MISC-English Certificate Course</option>
+	<option value="MISC-Etabs Training Programme">MISC-Etabs Training Programme</option>
+	<option value="MISC-Fines">MISC-Fines</option>
+	<option value="MISC-Formal Dress">MISC-Formal Dress</option>
+	<option value="MISC-Formal Suit">MISC-Formal Suit</option>
+	<option value="MISC-Gym Fee">MISC-Gym Fee</option>
+	<option value="MISC-IBM Db2 Certification Fee">MISC-IBM Db2 Certification Fee</option>
+	<option value="MISC-IBM Rad Fee">MISC-IBM Rad Fee</option>
+	<option value="MISC-IFS Consultants Pvt Ltd">MISC-IFS Consultants Pvt Ltd</option>
+	<option value="MISC-Lab Fines And Breakages">MISC-Lab Fines And Breakages</option>
+	<option value="MISC-Lab Usage Charges">MISC-Lab Usage Charges</option>
+	<option value="MISC-Lanyard">MISC-Lanyard</option>
+	<option value="MISC-Mphil Adjudication Fee">MISC-Mphil Adjudication Fee</option>
+	<option value="MISC-Phd Adjudication Fee">MISC-Phd Adjudication Fee</option>
+	<option value="MISC-Provisional Registration Fee">MISC-Provisional Registration Fee</option>
+	<option value="MISC-Seminar Receipts">MISC-Seminar Receipts</option>
+	<option value="MISC-Tennis Fee">MISC-Tennis Fee</option>
+	<option value="MISC-TPO Receipts">MISC-TPO Receipts</option>
+	<option value="MISC-Training Program On Geo Spatial Tech.">MISC-Training Program On Geo Spatial Tech.</option>
+	<option value="MISC-Yoga Fee">MISC-Yoga Fee</option>
+	<option value="MISC-Security RFID">MISC-Security RFID</option>
+	<option value="MISC-Sale of books">MISC-Sale of books</option>
+	<option value="MISC-Alumni fee">MISC-Alumni fee</option>
+	<option value="MISC-ID Card replacement">MISC-ID Card replacement</option>
+	<option value="MISC-Consultancy Receipts">MISC-Consultancy Receipts</option>
+	<option value="MISC-Advance refund">MISC-Advance refund</option>
+	<option value="MISC-Salary recovery">MISC-Salary recovery</option>
+	<option value="MISC-Laptop recovery">MISC-Laptop recovery</option>
+	<option value="MISC-Income tax short deduction">MISC-Income tax short deduction</option>
+
+</select>
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2 tution ml1_4" id="misc_fee1">
+                                <div class="form-group">
+                                   <input name="txtmiscfee" type="text" value="0" maxlength="6" readonly="readonly" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;txtmiscfee\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;return isNumber(event)" id="txtmiscfee" class="form-control" placeholder="Misc fee " fdprocessedid="xs94hg"> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 common_check">
+                                <div class="custom-control custom-checkbox">
+                                    <input id="chkbusfee" type="radio" name="GVR" value="chkbusfee" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;chkbusfee\&#39;,\&#39;\&#39;)&#39;, 0)">
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-7 col-md-8 col-lg-7  col-xl-5 tution">
+                                <div class="form-group">
+                                  <select name="cbobusroutes" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;cbobusroutes\&#39;,\&#39;\&#39;)&#39;, 0)" id="cbobusroutes" class="form-control" fdprocessedid="lf60a">
+	<option selected="selected" value="Select bus pass fee">Select bus pass fee</option>
+
+</select>
+                                    <div class="form-group">
+                                        <br>
+                                    
+                                    
+                                        </div>
+
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2 tution ml1_4" id="bus_fee1">
+                                <div class="form-group">
+                                   <input name="txtbusfee" type="text" value="0" maxlength="7" readonly="readonly" id="txtbusfee" class="form-control" onkeypress="return isNumber(event)" fdprocessedid="a2rte">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 common_check">
+                                <div class="custom-control custom-checkbox">
+                                    <input id="Chkplfee" type="radio" name="GVR" value="Chkplfee" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;Chkplfee\&#39;,\&#39;\&#39;)&#39;, 0)">
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-7 col-md-8 col-lg-7  col-xl-5 tution">
+                                <div class="form-group">
+                                   <select name="cboplacementcodes" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;cboplacementcodes\&#39;,\&#39;\&#39;)&#39;, 0)" id="cboplacementcodes" class="form-control" fdprocessedid="8pn7eo">
+	<option selected="selected" value="Select placement fee">Select placement fee</option>
+	<option value="PLACEMENT-Technical fee-7600">PLACEMENT-Technical fee-7600</option>
+
+</select>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2 tution ml1_4" id="place_fee1">
+                                <div class="form-group">
+                                   <input name="txtplacementfee" type="text" value="0" maxlength="7" readonly="readonly" id="txtplacementfee" class="form-control" onkeypress="return isNumber(event)" style="font-size:Large;" fdprocessedid="rbkce9">
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 common_check">
+                                <div class="custom-control custom-checkbox">
+                                    <input id="Chklibraryfee" type="radio" name="GVR" value="Chklibraryfee" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;Chklibraryfee\&#39;,\&#39;\&#39;)&#39;, 0)">
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-5 tution">
+                                <div class="form-group">
+                                    <select name="cbolibraryfee" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;cbolibraryfee\&#39;,\&#39;\&#39;)&#39;, 0)" id="cbolibraryfee" class="form-control" fdprocessedid="5ufni8">
+	<option selected="selected" value="Select KRC Miscellaneous fee">Select KRC Miscellaneous fee</option>
+	<option value="LIBRARY-Loss of ID card">LIBRARY-Loss of ID card</option>
+	<option value="LIBRARY-Loss of ID card tag">LIBRARY-Loss of ID card tag</option>
+	<option value="LIBRARY-Loss of property counter coupon">LIBRARY-Loss of property counter coupon</option>
+	<option value="LIBRARY-Book replacement charge">LIBRARY-Book replacement charge</option>
+	<option value="LIBRARY-Book binding charge">LIBRARY-Book binding charge</option>
+	<option value="LIBRARY-Book loss cost">LIBRARY-Book loss cost</option>
+	<option value="LIBRARY-Library donation">LIBRARY-Library donation</option>
+	<option value="LIBRARY-Library fine">LIBRARY-Library fine</option>
+	<option value="LIBRARY-Miscellaneous">LIBRARY-Miscellaneous</option>
+
+</select>
+            
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2 tution ml1_4" id="krc_fee1">
+                                <div class="form-group">
+                                   <input name="txtlibraryfeedue" type="text" value="0" maxlength="6" readonly="readonly" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;txtlibraryfeedue\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;return isNumber(event)" id="txtlibraryfeedue" class="form-control" fdprocessedid="5l9rf3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 common_check"></div>
+                            <div class="col-8 col-sm-7 col-md-8 col-lg-7 col-xl-5 tution total_amt">
+                                <div class="form-group">
+                                    <label> Total amount</label>
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2 tution">
+                                <div class="form-group">
+                                     <input name="lbltotalamount" type="text" value="0" readonly="readonly" id="lbltotalamount" class="form-control" style="font-size:Large;font-weight:bold;" fdprocessedid="0opugi">
+                                </div>
+                            </div>
+                    
+                        </div>
+                        <center>
+                        <span id="lblinwords" style="color:#CC0000;font-size:Medium;font-weight:bold;"></span> 
+                            </center>
+                       
+                    </div>
+                    <hr>
+                   
+                <div class="payement">
+                     <div class="tution dd_pay">
+                        <input id="rboonline" type="radio" name="GRPPAYMODE" value="rboonline" checked="checked"><label for="rboonline">Online</label>
+                        <input id="rbodd" type="radio" name="GRPPAYMODE" value="rbodd" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;rbodd\&#39;,\&#39;\&#39;)&#39;, 0)"><label for="rbodd">Demand Draft (DD Payment is subject to realization of funds into GITAM account)</label>
+                         
+                   </div>
+                    <hr class="hr_color">
+                  
+                        <div id="online_payment">
+                            <div class="onlinePayment">
+
+                           
+                                <input id="rbopaytmubi" type="radio" name="PGSEL" value="rbopaytmubi">
+                                    <div class="gateways">
+                                        <img class="razor_pay" src="./images/Gateway3.png">
+                                    </div>
+                           
+                          
+                               <span class="aspNetDisabled"><input id="rbopaytmib" type="radio" name="PGSEL" value="rbopaytmib" disabled="disabled"></span>
+                                    <div class="gateways">
+                                       <img class="razor_pay" src="./images/Gateway2.png">
+                                       
+                                    </div>
+                         
+                               <input id="rborpayib" type="radio" name="PGSEL" value="rborpayib">
+                                    <div class="gateways">
+                                        <img class="razor_pay" src="./images/Gateway1.png">
+                                    </div>
+                        </div>
+                        </div>
+                        <div id="dd_payment" style="display: none;">
+                            <div class="row">
+                         <div class="col-xs-6 col-md-4 col-lg-3 col-xl-2">
+                             <div class="form-group ">
+                            <span id="lblddno">
+                                <span style="color:red">*</span>
+                                DD number</span>
+                            <input name="txtddno" type="text" maxlength="16" id="txtddno" class="form-control">
+                        </div>
+                             </div>
+                        <div class="col-xs-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="form-group ">
+                            <span id="lblddbank"><span style="color:red">*</span>DD Bank</span>
+                            <input name="txtddbank" type="text" maxlength="15" id="txtddbank" class="form-control">
+                        </div>
+                        </div>
+                        <div class="col-xs-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="form-group ">
+                            <span id="lbldddate"><span style="color:red">*</span>DD date</span>
+                            <input name="txtdddate" type="text" maxlength="15" id="txtdddate" class="form-control hasDatepicker" placeholder="DD/MM/YYYY">
+                        </div>
+                        </div>
+                        <div class="col-xs-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="form-group ">
+                            <span id="lblddamount"><span style="color:red">*</span>DD amount</span>
+                          <input name="txtddamount" type="text" maxlength="10" readonly="readonly" id="txtddamount" class="form-control">
+                        </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6 col-lg-3 col-xl-4 dd_pay tution">
+                            <h6>DD deposit bank</h6>
+                        <input id="rboubi" type="radio" name="BANK" value="rboubi"><label for="rboubi">UBI</label>
+                            <input id="rboindianbank" type="radio" name="BANK" value="rboindianbank" checked="checked"><label for="rboindianbank">INDIANBANK</label>
+                            </div>
+                         
+                    </div>
+                        </div>
+                        
+                    </div>
+                    
+
+                    <hr>
+                    <div class="terms">
+
+                         <input id="chkiaccept" type="checkbox" name="chkiaccept" checked="checked">
+                         <label class="" for="terms"> I accept <a href="#" data-toggle="modal" data-target="#myModal">terms &
+                            conditions. </a></label>
+                </div>
+                <div class="text-center mb-3">
+                     <span id="lblerror" class="error"></span>
+                  <span id="lblerr1" class="error"></span>
+                  <span id="lblerr2" class="error"></span>
+                </div>
+                 
+                <div class="col-sm-12 text-center mt-2">
+                    <input type="submit" name="btnselect" value="Proceed to pay" id="btnselect" class="btn btn-primary btn_tution" />
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Terms &
+                    Conditions.</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body terms">
+                <ul>
+                    <li>Fee payment modes attract transaction charges</li>
+                    <li>The fee being paid is only for fee head specified in the payment receipt and the
+                        remitter has to accept terms and conditions before making payment.</li>
+                    <li>Student fee payment will be confirmed, only after realization of funds into GITAM
+                        (Deemed to be University) account.</li>
+                    <li>The user agrees, understands and confirms that his/ her personal data including
+                        limitation details relating to debit card/ credit card/net banking transmitted over the
+                        Internet may be susceptible to misuse, hacking, theft / fraud and that GITAM (Deemed to
+                        be University) has no control over such matters.</li>
+                    <li>Please contact finance office for all fee payment matters.</li>
+
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="modal fade" id="EMI_payments" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">EMI options</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body terms mt-0">
+
+                 <ul>
+                    <li>STUDENT CONSENT - You chose to apply for the EMI option to pay the annual fee through the Financer, which requires sharing the following information with the Financer.</li>
+                <li>Candidate name, application or admission ID, course, Institute name and fee amount.</li>
+                <li>If you consent, this information will be shared on your behalf with the Financer to process the loan.</li>
+                <li>Please note that the Financer provides the financing option at its sole discretion.</li>
+                <li>GITAM does not assume any liability for any matters incidental to or connected with the loan proposal between the Financer and the Candidate.</li>
+                     </ul>
+               
+            </div>
+            <div class="modal-footer justify-content-center">
+                  <input type="submit" name="Button1" value="I consent to proceed" id="Button1" class="btn btn-primary" />
+
+                <button type="button" class="btn btn-light ml-3" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+                                 
+                                
+
+
+
+
+
+
+
+                     
+
+
+
+
+
+                                        
+                               
+                                
+
+    
+    
+    
+    <div>
+        
+        
+
+    </div>
+<script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+   function isNumber(evt) { evt = (evt) ? evt : window.event; var charCode = (evt.which) ? evt.which : evt.keyCode; if (charCode > 31 && (charCode < 48 || charCode > 57)) { return false; } return true; }
+   
+   $('#txtdddate').datepicker({
+       minDate: "-2M -15D",
+       maxDate: "0",
+       dateFormat: 'd-M-yy',
+       changeMonth: true,
+       changeYear: true,
+       yearRange: '2021:2025'
+   });
+
+   $(document).ready(function () {
+     
+           if ($("#rboonline").is(":checked")) {
+               $('#online_payment').show();
+               $('#dd_payment').hide();
+           }
+           else if($("#rbodd").is(":checked")) {
+               $('#online_payment').hide();
+               $('#dd_payment').show();
+           }
+     
+       });
+  
+</script>
+
+
+   
+    </form>
+</body>
+</html>
+
+

@@ -1,0 +1,174 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head><title>
+	G-Pay
+</title><link rel="shortcut icon" href="https://www.gitam.edu/assets/images/favicon.ico" type="image/x-icon" /><link href="css/bootstrap.min.css" rel="stylesheet" /><link href="css/fonts/remixicon.css" rel="stylesheet" /><link href="css/style.css" rel="stylesheet" />
+    <style>
+
+        .profile_name {
+            margin-top:5px;
+        }
+       
+    </style>
+</head>
+     <script>
+         // disable right click
+         document.addEventListener('contextmenu', event => event.preventDefault());
+
+         document.onkeydown = function (e) {
+
+             // disable F12 key
+             if (e.keyCode == 123) {
+                 return false;
+             }
+
+             // disable U key
+             if (e.ctrlKey && e.keyCode == 85) {
+                 return false;
+             }
+         }
+     </script>
+<body>
+
+
+    <div class="mainContainer">
+    <div class="leftSideBar">
+            <div class="logoText">
+                
+                <img src="images/logo-white.png" />
+
+            </div>
+            <!-- <hr> -->
+            <ul class="menuItems">
+                <li class="listItems active">
+                    <a href="index.html">
+                        <i class="ri-user-3-line"></i>
+                        <p>Profile</p>
+                    </a>
+                </li>
+                <li class="listItems">
+                    <a href="G-Pay1.html">
+                        <i class="ri-secure-payment-fill"></i>
+                        <p>Tuition & Misc. fee</p>
+                    </a>
+                </li>
+                  <li class="listItems ">
+                    <a href="hostelfee.html">
+                       <i class="ri-hotel-line"></i>
+                        <p>Hostel fee</p>
+                    </a>
+                </li>
+               
+                <li class="listItems ">
+                  <a href="paymenthistory.html">
+                        <i class="ri-history-fill"></i>
+                        <p>Payment history</p>
+                    </a>
+                </li>
+               
+            </ul>
+
+        </div>
+        <div class="rightSec">
+            <div class="topHeader">
+                <div>
+                    
+                     <h6 class="profile_name mr-5"><span class="mobile_hidden">Welcome,</span> &nbsp; 
+                         <span id="lblStudentName">VELICHALA ABHISHEK VARDHAN</span> 
+                         <span id="lblregdno">121910306006</span>
+
+
+                     </h6>
+                </div>
+                <div class="d-flex">
+                   
+                    <div class="logout">
+                        <a href="Login.aspx">
+                            <h6><i class="ri-login-circle-line"></i> Logout</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profileContainer boxContainer">
+              
+                <div class="profile_box boxInner table-responsive">
+                    <div class="row">
+                        <div class="col-12 col-lg-5">
+
+                            <table class="table ">
+	<tr>
+		<td>Name</td>
+		<td>:</td>
+		<td>
+                                            <span id="lblSName">VELICHALA ABHISHEK VARDHAN</span></td>
+	</tr>
+	<tr>
+		<td>Campus</td>
+		<td>:</td>
+		<td><span id="lblCampus">VSP</span></td>
+	</tr>
+	<tr>
+		<td>Institute</td>
+		<td>:</td>
+		<td><span id="lblInstitute">GIT</span></td>
+	</tr>
+	<tr>
+		<td>Branch</td>
+		<td>:</td>
+		<td><span id="lblBranch">CSE</span></td>
+	</tr>
+</table>
+
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Registration no</td>
+                                        <td>:</td>
+                                        <td><span id="lblStudentNo">121910306006</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Program</td>
+                                        <td>:</td>
+                                        <td><span id="lblClass">BTECH</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Year of study</td>
+                                        <td>:</td>
+                                        <td><span id="lblYear">IV Yr</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Semester</td>
+                                        <td>:</td>
+                                        <td><span id="lblSemister">8</span></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-12 col-lg-2">
+                        <img src="https://doeresults.gitam.edu/photo/img.aspx?id=121910306006" id="studentImage" class="img-fluid" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
